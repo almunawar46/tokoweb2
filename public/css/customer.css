@@ -1,0 +1,226 @@
+/* =======================================================
+   FILE       : public/css/customer.css
+   DIGUNAKAN  : resources/views/frontend/home.blade.php
+   FUNGSI     : Tampilan produk di halaman customer (home)
+   ======================================================= */
+
+
+/* ================== LAYOUT UTAMA ================== */
+/* Container utama pembungkus halaman */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Animasi wrapper (opsional, dari animate.css) */
+.home-animation-wrapper {
+    --animate-duration: 1.5s;
+    backface-visibility: visible;
+    transform-style: preserve-3d;
+}
+
+/* Judul section "Produk Terbaru" */
+.section-title {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2d3436;
+}
+
+
+/* ================== GRID & CARD PRODUK ================== */
+/* Grid daftar produk */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Kartu produk */
+.product-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #f1f1f1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efek hover kartu */
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+
+/* ================== BAGIAN GAMBAR PRODUK ================== */
+/* Pembungkus gambar produk */
+.product-img-container {
+    width: 100%;
+    height: 250px;
+    background: #f9f9f9;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Semua gambar produk */
+.product-img {
+    position: absolute;   /* penting untuk ganti gambar */
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Gambar disembunyikan */
+.product-img.d-none {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+/* Gambar yang aktif / tampil */
+.product-img.active {
+    display: block !important;
+    opacity: 1 !important;
+    position: relative;
+}
+
+/* Teks petunjuk klik */
+.click-hint {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    z-index: 10;
+}
+
+
+/* ================== KONTEN PRODUK ================== */
+/* Area teks produk */
+.product-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nama produk */
+.product-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d3436;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.product-name:hover {
+    color: #e67e22;
+}
+
+/* Deskripsi singkat */
+.product-description {
+    font-size: 14px;
+    color: #636e72;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* maksimal 2 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Harga */
+.product-price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #e67e22;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+
+/* ================== TOMBOL BELI ================== */
+.btn-buy {
+    background: #f4ab00;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-buy:hover {
+    background: #34df19;
+    color: #fff;
+}
+
+
+/* ================== EMPTY STATE (JIKA PRODUK KOSONG) ================== */
+/* Membuat tampilan kosong berada di tengah */
+.empty-state-full-width {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+}
+
+/* Card kosong */
+.empty-state-card {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 450px;
+}
+
+/* Icon kosong */
+.icon-box {
+    color: #e2e8f0;
+    margin-bottom: 25px;
+}
+
+/* Judul kosong */
+.empty-state-card h3 {
+    color: #2d3436;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+/* Tombol reset */
+.btn-reset {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #f48302;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-reset:hover {
+    background: #d67201;
+    transform: translateY(-3px);
+}
+

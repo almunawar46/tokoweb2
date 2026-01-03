@@ -1,0 +1,384 @@
+/* -----------------------------------------------------------
+   1. DASAR & LAYOUT
+   ----------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f8f9fa; /* Ganti background halaman di sini */
+    color: #333333;
+}
+
+main {
+    min-height: 80vh; 
+    padding-bottom: 50px;
+}
+
+/* -----------------------------------------------------------
+   2. HEADER / TOPBAR (NAVIGASI ATAS)
+   ----------------------------------------------------------- */
+.topbar {
+    background-color: #ed8a1a; /* Warna Background Header */
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* -----------------------------------------------------------
+    3. DROPDOWN KATEGORI (FIXED: Klik Version)
+   ----------------------------------------------------------- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    user-select: none; /* Mencegah teks terpilih saat diklik berkali-kali */
+}
+
+.dropdown-content {
+    display: none; /* Tetap sembunyi secara default */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 1001; /* Angka tinggi agar muncul di depan gambar produk */
+    border-radius: 6px;
+    top: 100%; /* Muncul tepat di bawah tombol */
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+/* CLASS BARU: Akan dipicu oleh JavaScript */
+.dropdown-content.show {
+    display: block !important;
+}
+
+.dropdown-content a {
+    color: #333333 !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    border-bottom: 1px solid #eeeeee;
+    transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: #ed8a1a !important;
+}
+
+/* HAPUS SEPENUHNYA BAGIAN .dropdown:hover jika masih ada */
+/* -----------------------------------------------------------
+   4. PENCARIAN (SEARCH BAR)
+   ----------------------------------------------------------- */
+.search-area {
+    flex: 1;
+    max-width: 450px;
+    margin: 0 30px;
+}
+
+.search-input-wrapper {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777777;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* -----------------------------------------------------------
+   5. FOOTER (BAGIAN BAWAH)
+   ----------------------------------------------------------- */
+.footer {
+    background-color: #1a1a1a; /* Background Footer */
+    color: #ffffff;
+    padding: 60px 0 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ed8a1a; /* Warna Judul Footer */
+}
+
+.footer-col p, .footer-col ul li {
+    font-size: 14px;
+    color: #bbbbbb;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.footer-col ul li a {
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ed8a1a; /* Warna link footer saat di-hover */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ed8a1a;
+}
+
+/* -----------------------------------------------------------
+   6. RESPONSIVE (TAMPILAN HP)
+   ----------------------------------------------------------- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search-area {
+        width: 100%;
+        margin: 0;
+    }
+    .nav-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+/* Container Utama */
+.container {
+    max-width: 1200px; /* Samakan dengan max-width header-content Anda */
+    margin: 40px auto; /* auto akan membuat konten berada di tengah secara horizontal */
+    padding: 0 20px;   /* Jarak aman di layar HP agar tidak mentok ke pinggir layar */
+}
+
+/* Judul Section */
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+/* Grid Produk agar rapi 3 atau 4 kolom */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+/* -----------------------------------------------------------
+   STYLE UNTUK PRODUK KOSONG
+   ----------------------------------------------------------- */
+.empty-search {
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin: 20px 0;
+}
+
+.empty-icon {
+    font-size: 80px;
+    color: #dddddd; /* Warna abu-abu pudar */
+    margin-bottom: 20px;
+}
+
+.empty-search h3 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.empty-search p {
+    color: #777777;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ed8a1a; /* Warna orange sesuai tema Anda */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #d47915;
+    box-shadow: 0 4px 10px rgba(237, 138, 26, 0.3);
+}
+/* Container pembungkus search */
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative; /* Penting untuk posisi ikon */
+    background: #fff;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Mengatur Ikon agar berada di sisi kiri dalam input */
+.search-icon {
+    position: absolute;
+    left: 15px; /* Jarak ikon dari pinggir kiri */
+    color: #888;
+    z-index: 10;
+    pointer-events: none; /* Agar ikon tidak bisa diklik sehingga tidak mengganggu input */
+}
+
+/* Mengatur Input agar teks tidak menabrak ikon */
+.search-input-wrapper input {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* Padding kiri 45px agar teks mulai setelah ikon */
+    border: 1px solid #ddd;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: none; /* Agar menyatu dengan tombol Cari */
+    outline: none;
+    font-size: 14px;
+}
+
+/* Tombol Cari di sebelah kanan */
+.btn-search-text {
+    background: #f89406;
+    color: white;
+    border: 1px solid #f89406;
+    padding: 12px 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap; /* Agar tulisan "Cari" tidak turun ke bawah */
+}
+
+.btn-search-text:hover {
+    background: #e68a00;
+}
+/* --- Tambahkan ini di bagian bawah CSS Anda --- */
+@media (max-width: 768px) {
+    /* Header menjadi fleksibel ke bawah */
+    .header-content {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    /* Logo dan menu bantuan tetap terlihat rapi */
+    .nav-left, .nav-right {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    /* Sembunyikan Navigasi Link (Beranda/Kategori) di HP agar tidak penuh */
+    .nav-links {
+        display: none; 
+    }
+
+    /* Kolom pencarian jadi lebar penuh di HP */
+    .search-area {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .search-input-wrapper {
+        width: 100%;
+    }
+
+    /* Input menyesuaikan lebar HP */
+    .search-input-wrapper input {
+        font-size: 14px;
+        padding-left: 40px; /* Tetap beri ruang untuk kaca pembesar */
+    }
+
+    /* Tombol Cari tetap pas */
+    .btn-search-text {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}

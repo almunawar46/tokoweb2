@@ -1,0 +1,173 @@
+/* ============================================================
+   STYLING HALAMAN LOGIN WARASIKO
+   ============================================================ */
+
+/* 1. Pengaturan Dasar Body & Background */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa; /* Warna abu-abu sangat muda untuk background luar */
+    display: flex;             /* Mengaktifkan mode flexbox */
+    justify-content: center;    /* Mengatur konten agar di tengah secara horizontal */
+    align-items: center;        /* Mengatur konten agar di tengah secara vertikal */
+    height: 100vh;             /* Mengambil tinggi penuh layar laptop/HP */
+    color: #121212;            /* Warna teks default (hitam pekat) */
+}
+
+/* 2. Container (Kotak Putih Login) */
+.login-container {
+    background-color: white;
+    padding: 20px 20px 10px;   /* Jarak dalam kotak (Atas, Kanan-Kiri, Bawah) */
+    border-radius: 12px;       /* Membuat sudut kotak jadi melengkung/tumpul */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Efek bayangan halus agar kotak terlihat timbul */
+    width: 370px;              /* Lebar kotak login */
+    box-sizing: border-box;    /* Memastikan padding tidak merusak lebar total kotak */
+}
+
+/* 3. Area Logo */
+.logo-box {
+    text-align: center;        /* Logo diletakkan di tengah */
+    margin-bottom: 20px;       /* Jarak bawah logo ke tulisan judul */
+}
+
+/* 4. Judul H1 (Masuk ke Warasiko) */
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 700;          /* Ketebalan huruf (Bold) */
+    font-size: 24px;
+    color: #121313;            /* Warna hijau khas Warasiko */
+}
+
+/* 5. Pengaturan Form & Input */
+form {
+    display: flex;
+    flex-direction: column;    /* Menyusun label dan input secara berderet ke bawah */
+}
+
+label {
+    font-weight: 600;          /* Huruf label agak tebal */
+    margin-bottom: 6px;        /* Jarak label ke kotak input */
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;             /* Ruang di dalam kotak input agar teks tidak mepet */
+    margin-bottom: 5px;        /* Jarak antar input */
+    border: 1px solid #b2ce5f;    /* Garis pinggir kotak input warna abu-abu */
+    border-radius: 8px;        /* Sudut kotak input melengkung */
+    font-size: 15px;
+    transition: border-color 0.2s ease; /* Animasi halus saat kotak diklik/fokus */
+}
+
+/* Efek saat Kotak Input diklik (Focus) */
+input:focus {
+    outline: none;             /* Menghilangkan garis biru default browser */
+    border-color: #f59e0b;     /* Warna garis berubah jadi hijau */
+    box-shadow: 0 0 4px rgba(42, 157, 143, 0.4); /* Efek cahaya hijau di sekitar input */
+}
+
+/* 6. Styling Error (Jika Validasi Laravel Gagal) */
+input.is-invalid {
+    border-color: #ff0b20;     /* Garis kotak jadi merah jika salah */
+}
+
+.error-message {
+    color: #e63946;            /* Warna teks pesan error (merah) */
+    font-size: 12px;
+    margin-bottom: 12px;       /* Jarak setelah pesan error */
+}
+
+/* 7. Tombol Submit (Login) */
+button {
+    background-color: #f59f09; /* Warna tombol hijau */
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;           /* Kursor berubah jadi tangan saat diarahkan ke tombol */
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Efek saat Tombol disentuh Mouse (Hover) */
+button:hover {
+    background-color: #f59e0b; /* Warna hijau jadi lebih gelap saat di-hover */
+}
+
+/* 8. Link di Bawah (Lupa Password & Daftar) */
+.links {
+    display: flex;
+    justify-content: space-between; /* Membuat satu link di kiri, satu di kanan */
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.links a, .links span {
+    color: #f59e0b;
+    text-decoration: none;     /* Menghilangkan garis bawah default link */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.links a:hover, .links span:hover {
+    text-decoration: underline; /* Garis bawah muncul saat link disentuh mouse */
+}
+
+/* 9. Pesan Notifikasi (Alert Error dari Session) */
+.alert {
+    padding: 10px;
+    background-color: #f8d7da; /* Background merah muda tipis */
+    color: #721c24;            /* Teks merah gelap */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-left: 5px solid #e63946; /* Garis dekorasi merah di sisi kiri */
+}
+/* Container untuk mengatur posisi relatif */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Kotak Input */
+.input-group input {
+    width: 100%;
+    padding: 15px 10px 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+/* Label berada di tengah kotak saat awal */
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 5px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+/* Efek saat Input diklik (Focus) atau sudah terisi data */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 12px;
+    color: #e08f14; /* Warna Orange sesuai tombol Anda */
+    font-weight: bold;
+}
+
+.input-group input:focus {
+    border: 2px solid #ed9717;
+}

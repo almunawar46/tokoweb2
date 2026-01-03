@@ -1,0 +1,244 @@
+/* =========================================
+   1. TOPBAR & HEADER (MENGHAPUS SEMUA HITAM)
+   ========================================= */
+/* Menargetkan seluruh baris navigasi atas */
+.topbar, 
+.topbar .navbar-header, 
+.topbar .top-navbar,
+#navbarSupportedContent,
+header.topbar[data-navbarbg="skin5"] .navbar-header,
+header.topbar[data-navbarbg="skin5"] .top-navbar {
+    background: #ee9816 !important; /* Warna Oranye Utama */
+}
+
+/* Menghilangkan blok hitam di area user profil dan ikon */
+.topbar .dropdown-menu,
+.topbar .user-dd,
+.topbar .nav-link {
+    background-color: transparent !important;
+}
+
+/* Mengatur warna teks dan ikon agar tetap putih di atas oranye */
+.topbar .navbar-brand .logo-text h4,
+.topbar .nav-toggler, 
+.topbar .topbartoggler,
+.topbar .nav-link i,
+.topbar .nav-link span {
+    color: #ffffff !important;
+}
+
+/* =========================================
+   2. SIDEBAR & SUB-MENU (ORANYE PENUH)
+   ========================================= */
+.left-sidebar, 
+.sidebar-nav, 
+#sidebarnav,
+.sidebar-nav ul .sidebar-item .first-level {
+    background: #ffa600 !important;
+}
+
+/* Warna link menu dan sub-menu */
+.sidebar-nav ul .sidebar-item .sidebar-link {
+    background: transparent !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Hover dan Menu Aktif */
+.sidebar-nav ul .sidebar-item.selected > .sidebar-link,
+.sidebar-nav ul .sidebar-item .sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* =========================================
+   3. PERBAIKAN FORM & LAINNYA
+   ========================================= */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    color: #ff9800;
+}
+
+.footer {
+    font-style: italic;
+    color: #888;
+}
+/* Membuat tampilan tabel lebih modern */
+.table thead th {
+    border-top: none !important;
+    border-bottom: 2px solid #f8f9fa !important;
+    text-transform: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    vertical-align: middle !important;
+    border-top: 1px solid #f8f9fa !important;
+    padding: 1.2rem 0.75rem !important;
+}
+
+/* Tombol dengan gaya outline */
+.btn-outline-primary {
+    border-color: #ffae00;
+    color: #fab106;
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: #ffb300;
+    color: white;
+}
+
+/* Mengatur jarak form hapus */
+.mr-2 {
+    margin-right: 8px;
+}
+
+.text-end {
+    text-align: right !important;
+}
+/* Styling Tabel Modern */
+.table td, .table th {
+    vertical-align: middle !important;
+    padding: 1.25rem 0.75rem !important;
+    border-top: 1px solid #f2f2f2 !important;
+}
+
+.table thead th {
+    background-color: #fdfdfd;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    padding: 1rem 0.75rem !important;
+}
+
+/* Badge Custom */
+.badge-light-success {
+    background-color: #e8fadf;
+    color: #28a745;
+}
+
+.badge-light-secondary {
+    background-color: #f4f4f4;
+    color: #6c757d;
+}
+
+/* Button Link Styling (Icon Only) */
+.btn-link {
+    text-decoration: none !important;
+    transition: transform 0.2s;
+}
+
+.btn-link:hover {
+    transform: scale(1.2);
+}
+
+/* Shadow Soft */
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+/* Styling Form Modern */
+.form-control:focus {
+    background-color: #fff !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.1) !important;
+    border: 1px solid #dc3545 !important;
+}
+
+.form-label {
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.img-thumbnail {
+    border: none;
+    background-color: #f8f9fa;
+}
+
+/* Penyesuaian CKEditor agar melengkung */
+.ck-editor__main .ck-content {
+    border-radius: 0 0 8px 8px !important;
+    background-color: #f8f9fa !important;
+    border: none !important;
+}
+/* Efek Hover untuk Gallery */
+.gallery-item {
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Tombol Hapus Bulat */
+.btn-danger.rounded-circle {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    line-height: 25px;
+    font-size: 12px;
+}
+/* Layout Styling */
+.card-produk-create {
+    border-radius: 15px;
+}
+
+.foto-preview-container {
+    padding: 20px;
+    background-color: #f8f9fc;
+    border-radius: 12px;
+}
+
+.foto-preview {
+    max-height: 250px; 
+    width: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+
+/* Form Styling */
+.form-group label {
+    font-weight: 700;
+    color: #4e73df;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #d1d3e2;
+}
+
+.form-control:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.1);
+}
+
+/* Input Group Decor */
+.input-group-text {
+    background-color: #eaecf4;
+    border-color: #d1d3e2;
+    font-weight: bold;
+    color: #4e73df;
+}
+
+/* Button Styling */
+.btn-save {
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 10px 30px;
+}
+
+/* Gallery Hover Effect */
+.gallery-container {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-container:hover .gallery-img {
+    transform: scale(1.05);
+}
